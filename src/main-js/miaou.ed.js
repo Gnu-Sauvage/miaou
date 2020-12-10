@@ -269,7 +269,12 @@ miaou(function(ed, chat, gui, locals, md, ms, notif, skin, usr, ws){
 					return /^\*\*[\s\S]*\*\*$/.test(s) ? s.slice(2, -2) : '**'+s+'**'
 				});
 				return false;
-			case 73: // ctrl - I : toggle italic
+			case 36: // ctrl - $ : toggle stroke
+				$input.replaceSelection(function(s){
+					return /^\-\-\-[\s\S]-\-\-\-$/.test(s) ? s.slice(3, -3) : '---'+s+'---'
+				});
+				return false;
+				case 73: // ctrl - I : toggle italic
 				$input.replaceSelection(function(s){
 					return /^\*[\s\S]*\*$/.test(s) ? s.slice(1, -1) : '*'+s+'*'
 				});
